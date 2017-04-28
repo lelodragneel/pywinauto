@@ -28,7 +28,7 @@ app = Application(backend='uia').start(r'mspaint.exe')
 dlg = app.window(title_re='.* - Paint')
 
 # File->Open menu selection
-dlg.File_tab.click()
+dlg.File_tab.click() # For Windows 7, use dlg.window(title='Application menu').click()
 dlg.child_window(title='Open', control_type='MenuItem', found_index=0).invoke()
 
 # handle Open dialog
